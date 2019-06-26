@@ -1,0 +1,170 @@
+<html>
+<head>
+     <link rel="stylesheet" type="text/css" href="css/general.css">
+<script >
+
+// JavaScript Document
+var Timer;
+var TotalSeconds;
+
+function CreateTimer(TimerID, Time){
+    var oop=this;
+	this.Timer = document.getElementById(TimerID);
+	this.TotalSeconds = Time;
+	this.update();
+	oop.to=setTimeout(function(){ oop.tick(); }, 1000);
+}
+
+CreateTimer.prototype={
+
+ tick:function(){
+    var oop=this;
+	if (this.TotalSeconds <= 0){
+		return;
+	}
+	this.TotalSeconds -= 1;
+	this.update()
+	oop.to=setTimeout(function(){ oop.tick(); }, 1000);
+ },
+
+ update:function(){
+ 	var Seconds = this.TotalSeconds,Days = Math.floor(Seconds / 86400);
+	Seconds -= Days * 86400;
+	var Hours = Math.floor(Seconds / 3600);
+	Seconds -= Hours * (3600);
+	var Minutes = Math.floor(Seconds / 60);
+	Seconds -= Minutes * (60);
+	var TimeStr = ((Days > 0) ? Days + " days " : "") +
+	LeadingZero(Hours) + ":" + LeadingZero(Minutes) + ":" + LeadingZero(Seconds)
+	this.Timer.innerHTML = TimeStr;
+ }
+
+}
+
+
+function LeadingZero(Time){
+	return (Time < 10) ? "0" + Time : + Time;
+}
+    function toZero(Time){
+	return (Time = 0) 
+}
+
+</script>
+</head>
+<body>
+    <div class="container1">
+<p id='timer1'></p>
+    <button id="b1" onclick="tempo1()">Start</button>
+    <button id="b1res" onclick="reset1()">Stop</button>
+        </div>
+    
+    <div class="container2">
+<p id='timer2'></p>
+    <button id="b2" onclick="tempo2()">Start</button>
+    <button id="b1res" onclick="reset2()">Stop</button>
+    </div>
+    <div class="container3">
+    <p id='timer3'></p>
+    <button id="b3" onclick="tempo3()">Start</button>
+    <button id="b1res" onclick="reset3()">Stop</button>
+    </div>
+    <div class="container4">
+    <p id='timer4'></p>
+    <button id="b4" onclick="tempo4()">Start</button>
+    <button id="b1res" onclick="reset4()">Stop</button>
+    </div>
+    <div class="container5">
+    <p id='timer5'></p>
+    <button id="b5" onclick="tempo5()">Start</button>
+    <button id="b1res" onclick="reset5()">Stop</button>
+    </div>
+    
+    
+<script type="text/javascript">
+    function tempo1(){
+        
+       document.getElementById("b1").disabled=true;
+           document.getElementById("b1").disabled = true;
+            temp1 = new CreateTimer("timer1", 7200);   
+    }
+    
+    function reset1(){
+        
+       temp1.Timer=0;
+        temp1.Hours=0;
+        temp1.Minutes=0;
+        document.getElementById("b1").disabled = false;
+        
+    }
+    
+    function tempo2(){
+        
+       document.getElementById("b2").disabled=true;
+           document.getElementById("b2").disabled = true;
+            temp2 = new CreateTimer("timer2", 7200);   
+    }
+    
+    function reset2(){
+        
+       temp2.Timer=0;
+        temp2.Hours=0;
+        temp2.Minutes=0;
+        document.getElementById("b2").disabled = false;
+        
+    }
+    
+    
+    function tempo3(){
+        
+       document.getElementById("b3").disabled=true;
+           document.getElementById("b3").disabled = true;
+            temp3 = new CreateTimer("timer3", 7200);   
+    }
+    
+    function reset3(){
+        
+       temp3.Timer=0;
+        temp3.Hours=0;
+        temp3.Minutes=0;
+        document.getElementById("b3").disabled = false;
+        
+    }
+    
+    
+    function tempo4(){
+        
+       document.getElementById("b4").disabled=true;
+           document.getElementById("b4").disabled = true;
+            temp4 = new CreateTimer("timer4", 7200);   
+    }
+    
+    function reset4(){
+        
+       temp4.Timer=0;
+        temp4.Hours=0;
+        temp4.Minutes=0;
+        document.getElementById("b4").disabled = false;
+        
+    }
+    
+    
+    function tempo5(){
+        
+       document.getElementById("b5").disabled=true;
+           document.getElementById("b5").disabled = true;
+            temp5 = new CreateTimer("timer5", 7200);   
+    }
+    
+    function reset5(){
+        
+       temp5.Timer=0;
+        temp5.Hours=0;
+        temp5.Minutes=0;
+        document.getElementById("b5").disabled = false;
+        
+    }
+    
+
+</script>
+</body>
+</html>
