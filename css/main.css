@@ -255,42 +255,40 @@ input.input100 {
 
 .hours{
     position: relative;
-    left: 70px;
+    left: 10px;
+    width: 200px;
     
 }
 
 .box1{
-    position: relative;
-    left: -470px;
+    position: absolute;
+    left: 10px;
     
     width: 250px;
 }
 
 .box2{
-    position: relative;
-    left: -220px;
-    top: -235px;
+    position: absolute;
+    left: 260px;
     width: 250px;
 }
 
 .box3{
-    position: relative;
-    left: 30px;
-    top: -470px;
+    position: absolute;
+    left: 510px;    
     width: 250px;
 }
 
 .box4{
-    position: relative;
-    left: 280px;
-    top: -705px;
+    position: absolute;
+    left: 760px;
+    
     width: 250px;
 }
 
 .box5{
-    position: relative;
-    left: 530px;
-    top: -940px;
+    position: absolute;
+    left: 1010px;
     width: 250px;
 }
 
@@ -524,8 +522,8 @@ input.input100 {
 
   /*---------------------------------------------*/
   .respon1 {
-    padding-left: 15px;
-    padding-right: 15px;
+    padding-left: 1px;
+    padding-right: 1px;
     max-width: 340px;
     margin: 0 auto;
   }
