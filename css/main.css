@@ -241,7 +241,60 @@ input.input100 {
   font-size: 70px;
   color: #fff;
   line-height: 1;
+    position: relative;
+    left: 10px;
+    top: -40px;
+    font-size: 50px;
+    width: 300px;
 }
+
+.timers{
+    width: 10px;
+    height: 10px;
+}
+
+.hours{
+    position: relative;
+    left: 70px;
+    
+}
+
+.box1{
+    position: relative;
+    left: -470px;
+    
+    width: 250px;
+}
+
+.box2{
+    position: relative;
+    left: -220px;
+    top: -235px;
+    width: 250px;
+}
+
+.box3{
+    position: relative;
+    left: 30px;
+    top: -470px;
+    width: 250px;
+}
+
+.box4{
+    position: relative;
+    left: 280px;
+    top: -705px;
+    width: 250px;
+}
+
+.box5{
+    position: relative;
+    left: 530px;
+    top: -940px;
+    width: 250px;
+}
+
+
 
 
 /*==================================================================
@@ -265,12 +318,11 @@ input.input100 {
 [ Width ]*/
 .wsize1 {
   max-width: 100%;
-  width: 790px;
+  width: 390px;
+    height: 400px
 }
 
-.wsize2 {
-  width: 100px;
-}
+
 
 
 /*//////////////////////////////////////////////////////////////////
