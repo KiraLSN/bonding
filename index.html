@@ -79,20 +79,7 @@
 
 <body>
 
-    <script>
-        function boxtime1() {
-            $.ajax({
-                type: "POST",
-                url: "geral.php",
-
-                success: function(data) {
-                    $('#geral').html(data);
-                }
-            });
-
-        }
-        setInterval("boxtime1()", 1000)
-    </script>
+    
 
     <div class="bg-img1 overlay1 size1 flex-w flex-c-m p-t-55 p-b-55 p-l-15 p-r-15" style="background-image: url('images/bg01.jpg');">
         <div class="wsize1">
@@ -212,12 +199,21 @@
 
             document.getElementById("b1").disabled = true;
             
-            temp1 = new CreateTimer("timer1", 7200);
-            if(temp1.Minutes > 7190){
+            temp1 = new CreateTimer("timer1", 10);
+            var d;
+            
+            d = setTimeout(colorir, 10000);
+            
+            
+            
+        }
+        
+        function colorir(){
+            
+            
+            
                 document.getElementById("box1").style.backgroundColor = "green";
-            }else{
-                document.getElementById("box1").style.backgroundColor = "orange";
-            }
+            
             
         }
 
@@ -227,6 +223,7 @@
             temp1.Hours = 0;
             temp1.Minutes = 0;
             document.getElementById("b1").disabled = false;
+             document.getElementById("box1").style.backgroundColor = "";
 
         }
 
