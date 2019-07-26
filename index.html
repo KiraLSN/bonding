@@ -111,6 +111,9 @@
 
                 <button id="b1" onclick="tempo1()">Start</button>
                 <button id="b1res" onclick="reset1()">Stop</button>
+                
+                <audio src="EggPlanet.mp3"></audio>
+                
             </div>
 
             <div id="box2" class="flex-w box2 flex-sa-m cd100 bor1 p-t-42 p-b-22 p-l-50 p-r-50 respon1">
@@ -210,10 +213,10 @@
         
         function colorir(){
             
-            
-            
                 document.getElementById("box1").style.backgroundColor = "green";
-            
+            //cont audio = document.querySelector('audio');
+
+//audio.play;
             
         }
 
@@ -232,6 +235,8 @@
             document.getElementById("b2").disabled = true;
             document.getElementById("b2").disabled = true;
             temp2 = new CreateTimer("timer2", 7200);
+            var a; 
+            a = setTimeout(colorir2, 7200000);
         }
 
         function reset2() {
@@ -239,7 +244,9 @@
             temp2.Timer = 0;
             temp2.Hours = 0;
             temp2.Minutes = 0;
-            document.getElementById("b2").disabled = false;
+            docume
+            
+            nt.getElementById("b2").disabled = false;
 
         }
 
