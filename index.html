@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Coming Soon 8</title>
+    <title>Espera de 2 Horas</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!--===============================================================================================-->
@@ -77,21 +77,58 @@
 
 </head>
 
-<body>
+<body onload="startTime()">
 
     
+    <script>
+        function boxtime1() {
+            $.ajax({
+                type: "POST",
+                url: "geral.php",
+
+                success: function(data) {
+                    $('#geral').html(data);
+                }
+            });
+
+        }
+        setInterval("boxtime1()", 1000)
+    </script>
+    
+     <script type="text/javascript">
+ function startTime() {
+     var today=new Date();
+     var h=today.getHours();
+     var m=today.getMinutes();
+     var s=today.getSeconds();
+     // add a zero in front of numbers<10
+     m=checkTime(m);
+     s=checkTime(s);
+     document.getElementById('txt').innerHTML=h+":"+m+":"+s;
+     t=setTimeout('startTime()',500);
+ }
+
+ function checkTime(i){
+ if (i<10) {
+     i="0" + i;
+ }
+     return i;
+ }
+ </script>
 
     <div class="bg-img1 overlay1 size1 flex-w flex-c-m p-t-55 p-b-55 p-l-15 p-r-15" style="background-image: url('images/bg01.jpg');">
+        
         <div class="wsize1">
             <p class="txt-center p-b-23">
                 <i class="zmdi zmdi-card-giftcard cl0 fs-60"></i>
             </p>
-
+<h3 class="l1-txt1 txt-center p-b-22 clock" id="txt"></h3>
             <h3 class="l1-txt1 txt-center p-b-22">
-                Cura de Cola
+                Espera de Cola  Bond-01
             </h3>
 
-
+<div class="wsize3">
+    
 
             <div id="box1" class="flex-w box1 flex-sa-m cd100 bor1 p-t-42 p-b-22 p-l-50 p-r-50 respon1">
 
@@ -109,11 +146,8 @@
                 </div>
                 <br>
 
-                <button id="b1" onclick="tempo1()">Start</button>
-                <button id="b1res" onclick="reset1()">Stop</button>
-                
-                <audio src="EggPlanet.mp3"></audio>
-                
+                <button id="b1" class="butao" onclick="tempo1()">Start</button>
+                <button id="b1res" class="butao" onclick="reset1()">Stop</button>
             </div>
 
             <div id="box2" class="flex-w box2 flex-sa-m cd100 bor1 p-t-42 p-b-22 p-l-50 p-r-50 respon1">
@@ -129,8 +163,8 @@
 
                 </div>
 
-                <button id="b2" onclick="tempo2()">Start</button>
-                <button id="b1res" onclick="reset2()">Stop</button>
+                <button id="b2" class="butao" onclick="tempo2()">Start</button>
+                <button id="b1res" class="butao" onclick="reset2()">Stop</button>
             </div>
 
             
@@ -147,8 +181,8 @@
 					
 				</div>
 
-				<button id="b3" onclick="tempo3()">Start</button>
-    <button id="b1res" onclick="reset3()">Stop</button>
+				<button id="b3" class="butao" onclick="tempo3()">Start</button>
+    <button id="b1res" class="butao" onclick="reset3()">Stop</button>
 				</div>
             
             
@@ -166,8 +200,8 @@
 					
 				</div>
 
-				<button id="b4" onclick="tempo4()">Start</button>
-    <button id="b1res" onclick="reset4()">Stop</button>
+				<button id="b4" class="butao" onclick="tempo4()">Start</button>
+    <button id="b1res" class="butao" onclick="reset4()">Stop</button>
 				</div>
             
             
@@ -185,11 +219,11 @@
 					
 				</div>
 
-				<button id="b5" onclick="tempo5()">Start</button>
-    <button id="b1res" onclick="reset5()">Stop</button>
+				<button id="b5" class="butao" onclick="tempo5()">Start</button>
+    <button id="b1res" class="butao" onclick="reset5()">Stop</button>
 				</div>
 			
-            
+            </div>
 
         </div>
     </div>
@@ -202,22 +236,14 @@
 
             document.getElementById("b1").disabled = true;
             
-            temp1 = new CreateTimer("timer1", 10);
-            var d;
-            
-            d = setTimeout(colorir, 10000);
-            
-            
-            
-        }
-        
-        function colorir(){
-            
+            temp1 = new CreateTimer("timer1", 7200);
+            /*
+            if(document.getElementById("timer1") < 7990){
                 document.getElementById("box1").style.backgroundColor = "green";
-            //cont audio = document.querySelector('audio');
-
-//audio.play;
-            
+            }else{
+                document.getElementById("box1").style.backgroundColor = "orange";
+            }
+            */
         }
 
         function reset1() {
@@ -226,17 +252,13 @@
             temp1.Hours = 0;
             temp1.Minutes = 0;
             document.getElementById("b1").disabled = false;
-             document.getElementById("box1").style.backgroundColor = "";
 
         }
 
         function tempo2() {
-
             document.getElementById("b2").disabled = true;
             document.getElementById("b2").disabled = true;
             temp2 = new CreateTimer("timer2", 7200);
-            var a; 
-            a = setTimeout(colorir2, 7200000);
         }
 
         function reset2() {
@@ -244,9 +266,7 @@
             temp2.Timer = 0;
             temp2.Hours = 0;
             temp2.Minutes = 0;
-            docume
-            
-            nt.getElementById("b2").disabled = false;
+            document.getElementById("b2").disabled = false;
 
         }
 
