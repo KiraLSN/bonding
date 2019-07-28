@@ -37,14 +37,21 @@ Primary use:
   src: url('../fonts/PlayfairDisplay/PlayfairDisplay-Italic.ttf'); 
 }
 
-
+.butao{
+    color: white;
+    font-size: 20px;
+}
 
 /*//////////////////////////////////////////////////////////////////
 [ RS PLUGIN ]*/
 /*---------------------------------------------*/
 .container {max-width: 1200px;}
 
-
+.clock{
+    position: relative;
+    
+    font-size 40px;
+}
 
 /*//////////////////////////////////////////////////////////////////
 [ Form ]*/
@@ -231,6 +238,7 @@ input.input100 {
 .l1-txt1 {
   font-family: Poppins-Bold;
   font-size: 48px;
+    width: 400px;
   color: #fff;
   line-height: 1.2;
   text-transform: uppercase;
@@ -317,7 +325,17 @@ input.input100 {
 .wsize1 {
   max-width: 100%;
   width: 390px;
-    height: 400px
+    height: 200px;
+    position: relative;
+    top: -300px;
+    
+    
+}
+
+.wsize3 {
+  position: relative;
+    left: -450px;
+    
 }
 
 
