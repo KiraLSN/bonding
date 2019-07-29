@@ -153,7 +153,11 @@
             <div id="box2" class="flex-w box2 flex-sa-m cd100 bor1 p-t-42 p-b-22 p-l-50 p-r-50 respon1">
 
 
-
+<audio id="audio">
+    
+    <source src="Morning.mp3" type="audio/mpeg">
+    Seu navegador não possui suporte ao elemento audio
+</audio>
 
                 <div class="flex-col-c-m wsize2 m-b-20">
                     <p class="l1-txt2 txt-center p-b-22">
@@ -237,14 +241,91 @@
             document.getElementById("b1").disabled = true;
             
             temp1 = new CreateTimer("timer1", 7200);
-            /*
-            if(document.getElementById("timer1") < 7990){
-                document.getElementById("box1").style.backgroundColor = "green";
-            }else{
-                document.getElementById("box1").style.backgroundColor = "orange";
-            }
-            */
+                        var d;
+            
+            d = setTimeout(colorir, 7200000);
+
+          
         }
+        
+        audio = document.getElementById('audio');
+        
+        function play(){
+        audio.play();
+    }
+ 
+    function pause(){
+        audio.pause();
+    }
+ 
+    function stop(){
+        audio.pause();
+        audio.currentTime = 0;
+    }
+        
+        function colorir(){
+            
+            
+            
+                document.getElementById("box1").style.backgroundColor = "green";
+            //var snd = new Audio("Egg Planet.mp3"); 
+            play();
+            
+        //snd.load();
+        //snd.play();
+              
+        }
+        
+        function colorir2(){
+            
+            
+            
+                document.getElementById("box2").style.backgroundColor = "green";
+            //var snd = new Audio("Egg Planet.mp3"); 
+            play();
+            
+        //snd.load();
+        //snd.play();
+              
+        }
+        function colorir3(){
+            
+            
+            
+                document.getElementById("box3").style.backgroundColor = "green";
+            //var snd = new Audio("Egg Planet.mp3"); 
+            play();
+            
+        //snd.load();
+        //snd.play();
+              
+        }
+        function colorir4(){
+            
+            
+            
+                document.getElementById("box4").style.backgroundColor = "green";
+            //var snd = new Audio("Egg Planet.mp3"); 
+            play();
+            
+        //snd.load();
+        //snd.play();
+              
+        }
+        function colorir5(){
+            
+            
+            
+                document.getElementById("box5").style.backgroundColor = "green";
+            //var snd = new Audio("Egg Planet.mp3"); 
+            play();
+            
+        //snd.load();
+        //snd.play();
+              
+        }
+        
+
 
         function reset1() {
 
@@ -252,6 +333,9 @@
             temp1.Hours = 0;
             temp1.Minutes = 0;
             document.getElementById("b1").disabled = false;
+             document.getElementById("box1").style.backgroundColor = "";
+            stop();
+            
 
         }
 
@@ -259,6 +343,9 @@
             document.getElementById("b2").disabled = true;
             document.getElementById("b2").disabled = true;
             temp2 = new CreateTimer("timer2", 7200);
+            var d;
+            
+            d = setTimeout(colorir2, 7200000);
         }
 
         function reset2() {
@@ -267,6 +354,7 @@
             temp2.Hours = 0;
             temp2.Minutes = 0;
             document.getElementById("b2").disabled = false;
+            stop();
 
         }
 
@@ -276,6 +364,9 @@
             document.getElementById("b3").disabled = true;
             document.getElementById("b3").disabled = true;
             temp3 = new CreateTimer("timer3", 7200);
+            var d;
+            
+            d = setTimeout(colorir3, 7200000);
         }
 
         function reset3() {
@@ -284,6 +375,7 @@
             temp3.Hours = 0;
             temp3.Minutes = 0;
             document.getElementById("b3").disabled = false;
+            stop();
 
         }
 
@@ -293,6 +385,9 @@
             document.getElementById("b4").disabled = true;
             document.getElementById("b4").disabled = true;
             temp4 = new CreateTimer("timer4", 7200);
+            var d;
+            
+            d = setTimeout(colorir4, 7200000);
         }
 
         function reset4() {
@@ -301,6 +396,7 @@
             temp4.Hours = 0;
             temp4.Minutes = 0;
             document.getElementById("b4").disabled = false;
+            stop();
 
         }
 
@@ -310,6 +406,9 @@
             document.getElementById("b5").disabled = true;
             document.getElementById("b5").disabled = true;
             temp5 = new CreateTimer("timer5", 7200);
+            var d;
+            
+            d = setTimeout(colorir5, 7200000);
         }
 
         function reset5() {
@@ -318,6 +417,7 @@
             temp5.Hours = 0;
             temp5.Minutes = 0;
             document.getElementById("b5").disabled = false;
+            stop();
 
         }
     </script>
