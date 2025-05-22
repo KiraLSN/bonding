@@ -30,9 +30,9 @@ $_SESSION['login_erro'] = false;
 
 
 $base_dados  = 'bond';
-$usuario_bd  = 'Luciano';
-$senha_bd    = '123';
-$host_db     = '192.168.0.30';
+$usuario_bd  = 'root';
+$senha_bd    = '';
+$host_db     = '192.168.0.x';
 $charset_db  = 'UTF8';
 $conexao_pdo = null;
 
